@@ -5,5 +5,10 @@ metadata:
 spec:
   template:
     spec:
+      configPatches:
+      - op: replace
+        path: /machine/install
+        value:
+          disk: /dev/sda
       generateType: worker
       talosVersion: v1.11
