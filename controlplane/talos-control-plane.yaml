@@ -52,4 +52,5 @@ spec:
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
     name: aliktb-dev-cp
     namespace: default
+  replicas: 3
   version: v1.34.0
