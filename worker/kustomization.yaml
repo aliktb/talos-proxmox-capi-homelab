@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - worker-machine-template.yaml
 - talos-worker.yaml
+- worker-machine-deployment.yaml

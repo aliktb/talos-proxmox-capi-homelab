@@ -1,0 +1,25 @@
+apiVersion: cluster.x-k8s.io/v1beta2
+kind: MachineDeployment
+metadata:
+  name: aliktb-dev-talos-worker
+  namespace: default
+  labels:
+    cluster.x-k8s.io/cluster-name: aliktb-dev-cluster
+spec:
+  clusterName: aliktb-dev-cluster
+  selector:
+    matchLabels:
+      cluster.x-k8s.io/cluster-name: aliktb-dev-cluster
+  template:
+    spec:
+      bootstrap:
+        configRef:
+          apiGroup: bootstrap.cluster.x-k8s.io
+          kind: TalosConfigTemplate
+          name: aliktb-dev-talosconfig-workers
+      clusterName: aliktb-dev-cluster
+      infrastructureRef:
+        apiGroup: infrastructure.cluster.x-k8s.io
+        kind: ProxmoxMachineTemplate
+        name: aliktb-dev-worker
+      version: v1.34.0
