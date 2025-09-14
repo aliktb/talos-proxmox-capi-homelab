@@ -11,5 +11,9 @@ spec:
         value:
           disk: /dev/sda
           image: factory.talos.dev/nocloud-installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:v1.11.1
+      - op: add
+        path: /machine/kubelet/extraArgs
+        value:
+          cloud-provider: external
       generateType: worker
       talosVersion: v1.11
