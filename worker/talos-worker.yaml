@@ -15,5 +15,8 @@ spec:
         path: /machine/kubelet/extraArgs
         value:
           cloud-provider: external
+      - op: add
+        path: /machine/kubelet/extraArgs/rotate-server-certificates
+        value: "true"
       generateType: worker
       talosVersion: v1.11
