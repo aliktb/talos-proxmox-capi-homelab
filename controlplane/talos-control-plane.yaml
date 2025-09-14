@@ -3,6 +3,10 @@ kind: TalosControlPlane
 metadata:
   name: aliktb-dev-talos-cp
 spec:
+  controlPlaneConfig:
+    controlplane:
+      generateType: controlplane
+      talosVersion: v1.11
   infrastructureTemplate:
     kind: ProxmoxMachineTemplate
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
