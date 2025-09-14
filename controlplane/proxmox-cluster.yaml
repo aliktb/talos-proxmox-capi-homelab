@@ -3,3 +3,7 @@ kind: ProxmoxCluster
 metadata:
   name: aliktb-proxmox-cluster
   namespace: default
+spec:
+  controlPlaneEndpoint:
+    host: 192.168.0.102
+    port: 6443
