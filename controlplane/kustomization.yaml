@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - proxmox-cluster.yaml
 - cp-machine-template.yaml
+- talos-control-plane.yaml
