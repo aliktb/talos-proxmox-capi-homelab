@@ -16,3 +16,5 @@ spec:
     gateway: 192.168.0.1
     prefix: 24
     metric: 1
+  schedulerHints:
+    memoryAdjustment: 0
