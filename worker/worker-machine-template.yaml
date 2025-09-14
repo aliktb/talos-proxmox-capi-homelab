@@ -3,3 +3,9 @@ kind: ProxmoxMachineTemplate
 metadata:
   name: aliktb-dev-worker
   namespace: default
+spec:
+  template:
+    spec:
+      full: true
+      sourceNode: gemini
+      templateID: 125
