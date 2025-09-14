@@ -1,0 +1,27 @@
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
+kind: ProxmoxMachineTemplate
+metadata:
+  name: aliktb-dev-worker
+  namespace: default
+spec:
+  template:
+    spec:
+      checks:
+        skipCloudInitStatus: true
+      disks:
+        bootVolume:
+          disk: scsi0
+          sizeGb: 80
+      format: qcow2
+      full: true
+      memoryMiB: 16384
+      metadataSettings:
+        providerIDInjection: true
+      network:
+        default:
+          bridge: vmbr0
+          model: virtio
+      numCores: 2
+      numSockets: 1
+      sourceNode: gemini
+      templateID: 125

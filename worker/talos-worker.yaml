@@ -1,0 +1,22 @@
+apiVersion: bootstrap.cluster.x-k8s.io/v1alpha3
+kind: TalosConfigTemplate
+metadata:
+  name: aliktb-dev-talosconfig-workers
+spec:
+  template:
+    spec:
+      configPatches:
+      - op: replace
+        path: /machine/install
+        value:
+          disk: /dev/sda
+          image: factory.talos.dev/nocloud-installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:v1.11.1
+      - op: add
+        path: /machine/kubelet/extraArgs
+        value:
+          cloud-provider: external
+      - op: add
+        path: /machine/kubelet/extraArgs/rotate-server-certificates
+        value: "true"
+      generateType: worker
+      talosVersion: v1.11
