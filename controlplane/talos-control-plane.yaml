@@ -29,6 +29,24 @@ spec:
           path: /machine/kubelet/extraArgs
           value:
             cloud-provider: external
+        - op: add
+          path: /cluster/externalCloudProvider
+          value:
+            enabled: true
+            manifests:
+            - https://raw.githubusercontent.com/siderolabs/talos-cloud-controller-manager/main/docs/deploy/cloud-controller-manager.yml
+            - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
+        - op: add
+          path: /machine/kubelet/extraArgs/rotate-server-certificates
+          value: "true"
+        - op: add
+          path: /machine/features/kubernetesTalosAPIAccess
+          value:
+            enabled: true
+            allowedRoles:
+            - os:reader
+            allowedKubernetesNamespaces:
+            - kube-system
   infrastructureTemplate:
     kind: ProxmoxMachineTemplate
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
