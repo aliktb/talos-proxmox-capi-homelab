@@ -1,0 +1,8 @@
+apiVersion: bootstrap.cluster.x-k8s.io/v1alpha3
+kind: TalosConfigTemplate
+metadata:
+  name: aliktb-dev-talosconfig-workers
+spec:
+  template:
+    spec:
+      generateType: worker
