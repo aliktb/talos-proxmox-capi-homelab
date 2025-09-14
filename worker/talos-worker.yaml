@@ -6,3 +6,4 @@ spec:
   template:
     spec:
       generateType: worker
+      talosVersion: v1.11
