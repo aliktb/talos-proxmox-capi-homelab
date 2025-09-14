@@ -12,5 +12,9 @@ spec:
           sizeGb: 32
       format: qcow2
       full: true
+      network:
+        default:
+          bridge: vmbr0
+          model: virtio
       sourceNode: gemini
       templateID: 125
