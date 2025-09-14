@@ -7,6 +7,12 @@ spec:
     controlplane:
       generateType: controlplane
       talosVersion: v1.11
+      strategicPatches:
+      - |
+        - op: replace
+          path: /machine/install
+          value:
+            disk: /dev/sda
   infrastructureTemplate:
     kind: ProxmoxMachineTemplate
     apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
