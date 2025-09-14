@@ -6,6 +6,8 @@ metadata:
 spec:
   template:
     spec:
+      checks:
+        skipCloudInitStatus: true
       disks:
         bootVolume:
           disk: scsi0
