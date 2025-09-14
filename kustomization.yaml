@@ -6,6 +6,7 @@ generatorOptions:
     platform.ionos.com/secret-type: "proxmox-credentials"
 resources:
 - controlplane
+- worker
 secretGenerator:
 - name: proxmox-credentials
   envs:
