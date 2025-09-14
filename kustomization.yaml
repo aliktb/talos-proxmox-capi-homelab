@@ -1,4 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    platform.ionos.com/secret-type: "proxmox-credentials"
 resources:
 - controlplane
+secretGenerator:
+- name: proxmox-credentials
+  envs:
+  - proxmox.env

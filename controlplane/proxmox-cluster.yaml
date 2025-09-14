@@ -7,6 +7,8 @@ spec:
   controlPlaneEndpoint:
     host: 192.168.0.102
     port: 6443
+  credentialsRef:
+    name: "proxmox-credentials"
   dnsServers:
   - 8.8.8.8
   - 8.8.4.4
