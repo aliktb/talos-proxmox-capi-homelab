@@ -37,6 +37,10 @@ spec:
             - https://raw.githubusercontent.com/siderolabs/talos-cloud-controller-manager/main/docs/deploy/cloud-controller-manager.yml
             - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
         - op: add
+          path: /cluster/extraManifests
+          value:
+          - https://raw.githubusercontent.com/projectcalico/calico/v3.30.3/manifests/canal.yaml
+        - op: add
           path: /machine/kubelet/extraArgs/rotate-server-certificates
           value: "true"
         - op: add
