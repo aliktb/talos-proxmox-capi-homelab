@@ -23,4 +23,4 @@ spec:
         apiGroup: infrastructure.cluster.x-k8s.io
         kind: ProxmoxMachineTemplate
         name: aliktb-dev-worker
-      version: v1.34.0
+      version: v1.34.1
