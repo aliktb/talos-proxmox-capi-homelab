@@ -10,8 +10,8 @@ spec:
   credentialsRef:
     name: "proxmox-credentials"
   dnsServers:
+  - 192.168.0.1
   - 8.8.8.8
-  - 8.8.4.4
   ipv4Config:
     addresses:
     - 192.168.0.105-192.168.0.115
